@@ -29,11 +29,11 @@ jobs:
           result=$((RANDOM % 1800))  # 执行 sleep 命令并将结果存储在变量中， 0~30分钟内
           echo "执行 sleep 命令，等待 $result 秒..."
           sleep $result
-#       - name: Run Project
-#         run: |
-#           cd workflows
-#           yarn
-#           yarn checkin
+      - name: Run Project
+        run: |
+          cd workflows
+          yarn
+          yarn checkin
 #   SeaGold:
 #     needs: CheckIn
 #     runs-on: ubuntu-latest
