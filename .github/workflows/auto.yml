@@ -25,12 +25,15 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
       - name: Sleep for a random period of time
-        run: sleep $((RANDOM % 3600)) # 0-1小时随机
-      - name: Run Project
         run: |
-          cd workflows
-          yarn
-          yarn checkin
+          result=$((RANDOM % 60))  # 执行 sleep 命令并将结果存储在变量中
+          echo "执行 sleep 命令，等待 $result 秒..."
+          sleep $result # 0-1小时随机
+#       - name: Run Project
+#         run: |
+#           cd workflows
+#           yarn
+#           yarn checkin
 #   SeaGold:
 #     needs: CheckIn
 #     runs-on: ubuntu-latest
