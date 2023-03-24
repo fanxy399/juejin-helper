@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
       - name: Sleep for a random period of time
-        run: sleep $((RANDOM \% 3600))
+        run: sleep $((RANDOM % 3600))
       - name: Run Project
         run: |
           cd workflows
