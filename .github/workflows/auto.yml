@@ -2,7 +2,7 @@ name: Auto
 
 on:
   schedule:
-    - cron: "0 1 * * *" # 北京时间上午09:00
+    - cron: "30 0 * * *" # 北京时间上午08:30
   workflow_dispatch:
 
 env:
@@ -26,9 +26,9 @@ jobs:
       - uses: actions/setup-node@v2
       - name: Sleep for a random period of time
         run: |
-          result=$((RANDOM % 60))  # 执行 sleep 命令并将结果存储在变量中
+          result=$((RANDOM % 1800))  # 执行 sleep 命令并将结果存储在变量中， 0~30分钟内
           echo "执行 sleep 命令，等待 $result 秒..."
-          sleep $result # 0-1小时随机
+          sleep $result
 #       - name: Run Project
 #         run: |
 #           cd workflows
