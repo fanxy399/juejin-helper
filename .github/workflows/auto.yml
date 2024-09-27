@@ -32,8 +32,8 @@ jobs:
       - name: Run Project
         run: |
           cd workflows
-          npm
-          npm checkin
+          npm i
+          npm run checkin
 #   SeaGold:
 #     needs: CheckIn
 #     runs-on: ubuntu-latest
