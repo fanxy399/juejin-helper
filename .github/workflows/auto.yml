@@ -24,11 +24,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-      - name: Sleep for a random period of time
-        run: |
-          result=$((RANDOM % 1800))  # 执行 sleep 命令并将结果存储在变量中， 0~30分钟内
-          echo "执行 sleep 命令，等待 $result 秒..."
-          sleep $result
       - name: Run Project
         run: |
           cd workflows
